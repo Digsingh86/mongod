@@ -71,15 +71,15 @@ module "pvt_sg" {
   PVT_SG_TAGS = var.PVT_SG_TAGS
 }
 
-module "bastion_host" {
-  source         = "./modules/bastionHost"
-  AMI            = var.AMI
-  INSTANCE_TYPE  = var.INSTANCE_TYPE
-  SUBNET         = module.pb_subnet.public_subnet_id
-  security_group = module.pub_sg.public_sg_id
-  INSTANCE_TAGS  = var.MAIN_INSTANCE_TAGS
-  #  key_name = "${aws_key_pair.bastion.key_name}"
-}
+# module "bastion_host" {
+#   source         = "./modules/bastionHost"
+#   AMI            = var.AMI
+#   INSTANCE_TYPE  = var.INSTANCE_TYPE
+#   SUBNET         = module.pb_subnet.public_subnet_id
+#   security_group = module.pub_sg.public_sg_id
+#   INSTANCE_TAGS  = var.MAIN_INSTANCE_TAGS
+#   #  key_name = "${aws_key_pair.bastion.key_name}"
+# }
 module "main" {
   source         = "./modules/instances"
   AMI            = var.AMI
