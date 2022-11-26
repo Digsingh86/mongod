@@ -1,6 +1,6 @@
 ---
 - name: install mongodb
-  hosts: worker1
+  hosts: all
   tasks:
     - name: Include ansible-mongodb
       include_role:
