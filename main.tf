@@ -87,8 +87,8 @@ module "main" {
   SUBNET         = module.pb_subnet.public_subnet_id
   security_group = module.pub_sg.public_sg_id
   INSTANCE_TAGS  = var.MAIN_INSTANCE_TAGS
-  #  KEY_ID = module.access_key.key
-  #  KEY_NAME = var.KEY_NAME
+  user_data             = file("./ansible.sh")
+  
 }
 module "node1" {
   source         = "./modules/instances"
