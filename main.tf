@@ -97,7 +97,7 @@ module "node1" {
   SUBNET         = module.pvt_subnet1.private_subnet_id
   security_group = module.pvt_sg.private_sg_id
   INSTANCE_TAGS  = var.NODE1_INSTANCE_TAGS
-  #  KEY_ID = module.access_key.key
+  
 }
 module "node2" {
   source         = "./modules/instances"
@@ -106,7 +106,7 @@ module "node2" {
   SUBNET         = module.pvt_subnet2.private_subnet_id
   security_group = module.pvt_sg.private_sg_id
   INSTANCE_TAGS  = var.NODE2_INSTANCE_TAGS
-  #  KEY_ID = module.access_key.key
+ 
 }
 module "node3" {
   source         = "./modules/instances"
@@ -115,10 +115,6 @@ module "node3" {
   SUBNET         = module.pvt_subnet3.private_subnet_id
   security_group = module.pvt_sg.private_sg_id
   INSTANCE_TAGS  = var.NODE3_INSTANCE_TAGS
-  #  KEY_ID = module.access_key.key
+  
 }
-#module "access_key" {
-# source     = "./modules/keypair"
-#KEY_NAME   = var.KEY_NAME
-#PUBLIC_KEY   = var.PUBLIC_KEY
-#}
+
