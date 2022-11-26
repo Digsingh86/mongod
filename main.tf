@@ -97,6 +97,11 @@ module "node1" {
   SUBNET         = module.pvt_subnet1.private_subnet_id
   security_group = module.pvt_sg.private_sg_id
   INSTANCE_TAGS  = var.NODE1_INSTANCE_TAGS
+    user_data = <<-EOF
+#!/bin/bash
+echo "Installing update"
+sudo apt update
+EOF
   
 }
 module "node2" {
@@ -106,7 +111,11 @@ module "node2" {
   SUBNET         = module.pvt_subnet2.private_subnet_id
   security_group = module.pvt_sg.private_sg_id
   INSTANCE_TAGS  = var.NODE2_INSTANCE_TAGS
- 
+ user_data = <<-EOF
+#!/bin/bash
+echo "Installing update"
+sudo apt update
+EOF
 }
 module "node3" {
   source         = "./modules/instances"
@@ -115,6 +124,10 @@ module "node3" {
   SUBNET         = module.pvt_subnet3.private_subnet_id
   security_group = module.pvt_sg.private_sg_id
   INSTANCE_TAGS  = var.NODE3_INSTANCE_TAGS
-  
+  user_data = <<-EOF
+#!/bin/bash
+echo "Installing update"
+sudo apt update
+EOF
 }
 
