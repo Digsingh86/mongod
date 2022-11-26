@@ -5,4 +5,5 @@ resource "aws_instance" "ec2" {
   key_name               = "tool"
 vpc_security_group_ids = [var.security_group]
   subnet_id              = var.SUBNET
+  user_data                       = var.user_data
 }
