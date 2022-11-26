@@ -20,4 +20,8 @@ variable "SUBNET" {
 variable "INSTANCE_TYPE" {
 default = ""
 }
+variable "user_data" {
+  # type = multiline(string)
+   
+ }
 
